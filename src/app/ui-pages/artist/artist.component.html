@@ -1,0 +1,46 @@
+<div *ngIf="loading">
+
+</div>
+
+<div *ngIf="!loading">
+  <img *ngIf="image" src="{{image.url}}" />
+
+  <h1>
+    {{mbartist.name}}
+  </h1>
+
+  <h5>
+    {{mbartist.lifespan.begin}} – {{mbartist.lifespan.end || '?'}}
+  </h5>
+
+  <h5>
+    {{mbartist.country}}
+  </h5>
+
+  <p>
+    {{mbartist.disambiguation}}
+  </p>
+
+  <div class="chip">
+    <span class="avatar avatar-sm">{{lfartist.stats.listeners}}</span>
+    Listeners
+  </div>
+
+  <p>
+    <span class="badge" [attr.data-badge]="lfartist?.stats.listeners">Listeners</span>
+    <span class="badge" [attr.data-badge]="lfartist?.stats.playcount">Playcount</span>
+  </p>
+
+  <table class="table table-striped">
+    <tbody>
+      <tr *ngFor="let rel of mbartist.relations">
+        <td class="text-right">{{rel.type}}</td>
+        <td><a [href]="rel.url.resource" target="_blank">{{rel.url.resource}}</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    {{lfartist.bio.content}}
+  </p>
+</div>
