@@ -5,5 +5,5 @@ export class MusicBrainzUrl {
   id: string = undefined;
 
   @JsonProperty({name: 'resource'})
-  resourse: string = undefined;
+  resource: string = undefined;
 }

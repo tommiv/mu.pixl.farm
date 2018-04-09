@@ -5,6 +5,6 @@ export class MusicBrainzRelation {
   @JsonProperty({name: 'type'})
   type: string = undefined;
 
-  @JsonProperty({name: 'url'})
+  @JsonProperty({name: 'url', type: MusicBrainzUrl})
   url: MusicBrainzUrl = undefined;
 }
