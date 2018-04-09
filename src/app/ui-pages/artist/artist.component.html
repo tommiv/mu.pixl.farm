@@ -40,7 +40,9 @@
     </tbody>
   </table>
 
-  <p>
-    {{lfartist.bio.content}}
-  </p>
+  <div>
+    <p *ngFor="let paragraph of lfartist.bio.content.split('\n\n')">
+      {{paragraph}}
+    </p>
+  </div>
 </div>
